@@ -9,9 +9,15 @@ void print_vector(const vector<int> &a) {
 }
 
 void delete_even(vector<int> &a) {
-    vector<int>::iterator it;
-    for (it = a.begin(); it < a.end(); it++)
-        if(*it % 2 == 0)    a.erase(it);
+    vector<int>::iterator it=a.begin();
+    while (it!=  a.end())
+        {if(*it % 2 == 0)    
+            {it = a.erase(it);}
+        else {
+            ++it;
+        }
+        
+        }
 }
 
 void sort_decrease(vector<int> &a) {

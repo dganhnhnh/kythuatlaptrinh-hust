@@ -6,6 +6,7 @@ int mem[1000]; //# mảng ghi nhớ lời giải các bài toán con đã đư�
 
 void init(){
     memset(mem, -1, sizeof(mem));
+    //khởi tạo mảng toàn -1 
 }
 
 //# Quy hoạch động,
