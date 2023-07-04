@@ -6,42 +6,22 @@ using namespace std;
 template <class T>
 map<T, double> fuzzy_set_union(const map<T, double> &a, const map<T, double> &b)
 {
-    map<T, double> c;
+    map<T, double> c;        
 
-    double aKey, bKey, aValue, bValue;
     for (auto itA = a.begin(); itA != a.end(); itA++)
     {
-        // 2 tập hợp chưa chắc cùng số phần tử
-        aKey = itA->first;
-        aValue = itA->second;
-        for(auto itB = b.begin(); itB != b.end(); itB++){
-            bKey = itB->first;
-            bValue = itB->second;
-            if(bKey == aKey){
-                c[aKey] = max(aValue,bValue);
-                break;
-            }else if(c.find(bKey) == c.end()){
-                c[bKey] = bValue;
-            }
+
+        c[itA->first] = itA->second;
         }
-        if(b.find(aKey) == b.end()){
-            c[aKey] = aValue;
-        }
+    
+    for (auto itB = b.begin(); itB != b.end(); itB++)
+    {
+        double bKey = itB->first;
+        double bValue = itB->second;
+        if(c.find(bKey) == c.end())
+            c[bKey] = max(c[bKey], bValue);
     }
-    // for (auto itB = b.begin(); itB != b.end(); itB++){
-    //     bKey = itB->first;
-    //     bValue = itB->second;
-    //     if(c.find(bKey) == c.end()){
-    //         c[bKey] = bValue;
-    //     }
-    // }
-    // for (auto itA = a.begin(); itA != a.end(); itA++){
-    //     aKey = itA->first;
-    //     aValue = itA->second;
-    //     if(c.find(aKey) == c.end()){
-    //         c[aKey] = aValue;
-    //     }
-    // }
+    
     return c;
 }
 

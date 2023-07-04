@@ -3,14 +3,73 @@
 #include <climits>
 using namespace std;
 
-vector<int> dijkstra(const vector< vector< pair<int, int> > >&adj) {
-    //  đỉnh kề và trọng số tương ứng của cạnh
+
+struct compare{
+    bool operator() (pair<int, int> a, pair<int, int> b){
+        return a.second > b.second;
+    }
+};
+
+vector<int> dijkstra(const vector<vector<pair<int, int>>> &adj)
+{
+    // Khởi tạo hàng đợi ưu tiên (priority_queue) q, sử dụng cặp (pair) để lưu đỉnh và khoảng cách từ đỉnh 0 đến đỉnh đó
+    // Sắp xếp hàng đợi ưu tiên theo khoảng cách ngắn nhất
+    priority_queue<pair<int, int>, vector<pair<int, int>>, compare> q;
+    // Khởi tạo vector dist để lưu khoảng cách ngắn nhất từ đỉnh 0 đến các đỉnh còn lại
+    vector<int> dist(adj.size());
+
+    // Lấy kích thước của dist để sử dụng trong vòng lặp
+    int dist_size = dist.size();
+
+    // Khởi tạo tất cả các khoảng cách ban đầu với giá trị vô cùng (INT_MAX)
+    for (int i = 0; i < dist_size; i++)
+    {
+        dist[i] = INT_MAX;
+    }
+
+    // Khoảng cách từ đỉnh 0 đến chính nó là 0
+    dist[0] = 0;
+
+    // Đưa tất cả các đỉnh và khoảng cách từ đỉnh 0 đến hàng đợi ưu tiên
+    for (int i = 0; i < dist_size; i++)
+    {
+        q.push({i, dist[i]});
+    }
+
+    // Tiến hành thuật toán Dijkstra
+    while (!q.empty())
+    {
+        // Lấy đỉnh u có khoảng cách ngắn nhất từ đỉnh 0 trong hàng đợi ưu tiên
+        pair<int, int> u_pair = q.top();
+        q.pop();
+        int u = u_pair.first;
+
+        // Duyệt qua tất cả các đỉnh v kề với u
+        for (auto v_pair : adj[u])
+        {
+            int v = v_pair.first;
+            int weight = v_pair.second;
+
+            // Nếu khoảng cách từ đỉnh 0 đến v thông qua u nhỏ hơn khoảng cách hiện tại, cập nhật khoảng cách và đưa v vào hàng đợi
+            if (dist[v] > dist[u] + weight)
+            {
+                dist[v] = dist[u] + weight;
+                q.push({v, dist[v]});
+            }
+        }
+    }
+
+    // Trả về vector chứa khoảng cách ngắn nhất từ đỉnh 0 đến tất cả các đỉnh
+    return dist;
 }
 
-int main() {
+int main()
+{
     int n = 9;
-    vector< vector< pair<int, int> > > adj(n);
-    auto add_edge = [&adj] (int u, int v, int w) {
+    vector<vector<pair<int, int>>> adj(n);
+    // lambda function
+    auto add_edge = [&adj](int u, int v, int w)
+    {
         adj[u].push_back({v, w});
         adj[v].push_back({u, w});
     };
@@ -30,7 +89,8 @@ int main() {
     add_edge(7, 8, 7);
 
     vector<int> distance = dijkstra(adj);
-    for (int i = 0; i < distance.size(); ++i) {
+    for (int i = 0; i < distance.size(); ++i)
+    {
         cout << "distance " << 0 << "->" << i << " = " << distance[i] << endl;
     }
 
