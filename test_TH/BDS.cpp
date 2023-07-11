@@ -1,6 +1,7 @@
 // function overriding or templates??
 #include <iostream>
 #include <cstring>
+#include <conio.h>
 using namespace std;
 
 struct MiengDat
@@ -171,8 +172,8 @@ void hienThiMiengDat(CongTy ct)
              << "\t" << ct.dsMiengDat[i].donGia
              << "\t" << ct.dsMiengDat[i].dienTich
              << "\t\t" << ct.dsMiengDat[i].thanhTien
-             << "\t\t" << ct.dsMiengDat[i].giamGiaPhanTram*ct.dsMiengDat[i].thanhTien
-             << "\t\t" << ct.dsMiengDat[i].datCocPhanTram*ct.dsMiengDat[i].thanhTien
+             << "\t\t" << ct.dsMiengDat[i].giamGiaPhanTram * ct.dsMiengDat[i].thanhTien
+             << "\t\t" << ct.dsMiengDat[i].datCocPhanTram * ct.dsMiengDat[i].thanhTien
              << endl;
     }
 }
@@ -232,5 +233,7 @@ int main()
     while (choice != 3)
     {
         prompt();
+        cout << "\nBam phim bat ky de tiep tuc";
+        _getch();
     }
 }
