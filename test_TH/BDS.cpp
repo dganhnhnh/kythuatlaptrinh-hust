@@ -206,10 +206,11 @@ void handleExit()
 
 void prompt()
 {
-    cout << "\n1. Input" << endl;
-    cout << "2. Output" << endl;
-    cout << "3. Exit" << endl;
-    cout << "Your choice: ";
+    cout << "** CHUONG TRINH QUAN LY BAT DONG SAN **" << endl;
+    cout << "** 1. Nhap thong tin cong ty **" << endl;
+    cout << "** 2. In ket qua dien tich mieng dat \n";
+    cout << "** 3. Thoat **";
+    cout <<"*******************************\n**   Nhap lua chon cua ban   **\n";
     cin >> choice;
     switch (choice)
     {

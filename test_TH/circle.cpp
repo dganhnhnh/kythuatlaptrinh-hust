@@ -105,10 +105,12 @@ void viTriDiemDT(DuongTron dt, Diem X){
 
 void prompt()
 {
-    cout << "\n1. Input" << endl;
-    cout << "2. Output" << endl;
-    cout << "3. Exit" << endl;
-    cout << "Your choice: ";
+    cout << "** CHUONG TRINH QUAN LY CAC DUONG TRON **" << endl;
+    cout << "** 1. Nhap duong tron va 3 diem bat ki **" << endl;
+    cout << "** 2. In toa do tam, diem, ban kinh, vi tri, CHU VI, DIEN TICH, duong tron \n";
+    cout << "va chu vi, toa do trong tam cua tam giac lap tu 3 diem **" << endl;
+    cout << "** 0. Thoat **";
+    cout <<"*******************************\n**   Nhap lua chon cua ban   **\n";
     cin >> choice;
     switch (choice)
     {
@@ -130,7 +132,7 @@ void prompt()
 int main(){
     while(choice !=3){
         prompt();
-        cout << "Bam phim bat ky ";
+        cout << "Bam phim bat ky de tiep tuc";
         _getch();
     }
 }

@@ -4,9 +4,6 @@
 #include <iostream>
 
 using namespace std;
-
-// int outerChoice;
-
 struct DaThuc
 {
     char ten[20];
@@ -19,6 +16,7 @@ vector<DaThuc> danhSachDaThuc;
 // sửa để dùng malloc
 int x;
 int soLuong;
+int choice;
 
 void handleInput()
 {
@@ -139,11 +137,11 @@ void handleExit()
 
 void prompt()
 {
-    cout << "\n1. Input" << endl;
-    cout << "2. Output" << endl;
-    cout << "3. Exit" << endl;
-    cout << "Your choice: ";
-    int choice;
+    cout << "** CHUONG TRINH QUAN LY CAC DA THUC **" << endl;
+    cout << "** 1. Nhap cac da thuc, gia tri x **" << endl;
+    cout << "** 2. In danh sach da thuc va gia tri \n";
+    cout << "** 3. Thoat **";
+    cout <<"*******************************\n**   Nhap lua chon cua ban   **\n";
     cin >> choice;
     // outerChoice = choice;
     switch (choice)
@@ -174,10 +172,10 @@ int main()
     cout << "Nhap so luong da thuc: ";
     cin >> soLuong;
     
-    prompt();
-    // while(outerChoice!= 3){
-    //     prompt();
-    //     cout<< "Bam phim bat ky de tiep tuc";
-    //     _getch();
-    // }
+    // prompt();
+    while(choice!= 3){
+        prompt();
+        cout<< "Bam phim bat ky de tiep tuc";
+        _getch();
+    }
 }
