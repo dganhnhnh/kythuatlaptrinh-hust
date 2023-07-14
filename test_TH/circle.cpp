@@ -51,7 +51,8 @@ void nhap3Diem(int thuTu){
 }
 
 double chuVi(DuongTron dt){
-
+    double pi = 2 * asin(1.0);
+    return 2*pi*dt.banKinh;
 }
 
 void nhapDSDT(){

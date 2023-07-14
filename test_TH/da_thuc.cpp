@@ -10,6 +10,16 @@ struct DaThuc
     int thuTu;
     int bac;
     int heSo[10];
+
+    double tinhGiaTri(int x)
+    {
+        double result = 0;
+        for (int i = bac; i >= 0; i--)
+        {
+            result += heSo[i] * pow(x, i);
+        }
+        return result;
+    }
 };
 
 vector<DaThuc> danhSachDaThuc;
