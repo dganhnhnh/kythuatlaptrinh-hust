@@ -1,0 +1,3 @@
+- truyền tham chiếu theo 2 cách
+- tham số ngầm định
+- đa năng hóa hàm 
