@@ -30,13 +30,12 @@ int dp(int i){//Tim chieu cao cua toa thap voi dinh la vien i
     if (maxh[i] != 0) return maxh[i];
     maxh[i] = a[i].z;
     for(int j = 1; j <= n; j++){
-        // cout << "x: "<< a[j].x << " y: " << a[j].y << " z: " << a[j].z << endl;
         // nếu viên j lót được vào dưới viên i
         if (a[i].x < a[j].x && a[i].y < a[j].y || 
             a[i].x < a[j].y && a[i].y < a[j].x){
 
             maxh[i] = max (maxh[i], a[i].z + dp(j));
-            cout<< "maxh[" << i << "] = " << maxh[i] << endl;
+            // cout<< "maxh[" << i << "] = " << maxh[i] << endl;
         }
     }
     return maxh[i];

@@ -7,6 +7,7 @@ int n;
 void print_sol(){
     // in ra hoán vị tìm được
     for (int i = 1; i <= n; ++i) printf("%d ", x[i]);
+    // print("\n");
     printf("\n");
 }
 

@@ -25,10 +25,8 @@ int main()
             }
         }
         else
-        {
-            while (k--)
-            {
-                int a;
+        {while (k--)
+            {int a;
                 // cout << "So tien: ";
                 cin >> a;
                 sum -= a;

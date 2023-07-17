@@ -35,7 +35,7 @@ int dp(int i){//Tim chieu cao cua toa thap voi dinh la vien i
         if (a[i].x < a[j].x && a[i].y < a[j].y ||
             a[i].x < a[j].y && a[i].y < a[j].x){
             maxh[i] = max (maxh[i], a[i].z + dp(j));
-            cout<< "maxh[" << i << "] = " << maxh[i] << endl;
+            // cout<< "maxh[" << i << "] = " << maxh[i] << endl;
         }
     }
     return maxh[i];
@@ -48,9 +48,9 @@ int main(){
         input();
 
         // in để kiểm tra dữ liệu đã được nhập đúng chưa
-        for(int i = 1; i <= 3 * n; i++){
-            cout<< a[i].x << " " << a[i].y << " " << a[i].z << endl;
-        }
+        // for(int i = 1; i <= 3 * n; i++){
+        //     cout<< a[i].x << " " << a[i].y << " " << a[i].z << endl;
+        // }
 
         for(int i = 1; i <= 3 * n; i++){
             res = max(res, dp(i));

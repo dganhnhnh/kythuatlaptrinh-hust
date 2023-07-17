@@ -14,7 +14,7 @@ void init(){
 }
 
 void print() {
-    cout << "max value: "<< best;
+    cout << best;
 }
 
 void process(int i){
