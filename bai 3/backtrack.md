@@ -25,6 +25,21 @@ void TRY(int k){
     }
 }
 
+<!-- cách 2 -->
+void TRY(int k){
+    if(k==n) print_sol();
+
+    for(choice : choices){
+        make choice 
+        if(check){
+            save choice
+            
+            TRY(k+1);
+            undo choice
+        }
+    }
+}
+
 int main(){
         
     return 0;

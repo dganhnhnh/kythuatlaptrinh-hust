@@ -33,6 +33,7 @@
         "streambuf": "cpp",
         "type_traits": "cpp",
         "utility": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "cstddef": "cpp"
     }
 }
