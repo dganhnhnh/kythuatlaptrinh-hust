@@ -32,6 +32,8 @@ void TRY(int k)
 }
 main()
 {
+    freopen("tsm2.inp", "r", stdin);
+    freopen("sol1.out", "w", stdout);
 
     int a, b;
     cin >> n >> m;

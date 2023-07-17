@@ -2,6 +2,10 @@
 using namespace std;
 
 int main(){//code trau
+
+    freopen("tsm2.inp", "r", stdin);
+    freopen("sol2.out", "w", stdout);
+
     int n, m;
     cin >> n >> m;
     vector<vector<int>> c(n, vector<int>(n, 1e8));
