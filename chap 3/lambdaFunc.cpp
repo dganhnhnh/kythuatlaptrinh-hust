@@ -12,8 +12,6 @@ void forEach(int *arr, int n, void (*func)(int)){
     }
 }
 
-
-
 int main(){
     int arr[] = {1,2,3,4,5};
     // forEach(arr, 5, stdio_doing);
