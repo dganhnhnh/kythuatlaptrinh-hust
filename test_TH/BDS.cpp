@@ -1,4 +1,3 @@
-// function overriding or templates??
 #include <iostream>
 #include <cstring>
 #include <conio.h>

@@ -5,7 +5,7 @@
 using namespace std;
 
 // T: kiểu dữ liệu của các phần tử
-template <class T>
+template <typename T>
 set<T> set_union(const set<T> &a, const set<T> &b)
 {
     set<T> c;
