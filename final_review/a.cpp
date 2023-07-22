@@ -83,18 +83,86 @@
 
 // __________________________________________________________
 
+// #include <iostream>
+// using namespace std;
+
+// int main(int argc, char const *argv[])
+// {
+//     int M[3][3] ={1,2,3,4,5,6,7,8,9};
+//     // int n[]={1,2,3};
+//     // int m[][]={1,2,3};
+
+//     // M = {1,2,3,4};
+//     cout << 2[M][1];
+
+//     int x=5; 
+//     return 0;
+// }
+// __________________________________________________________
+
+// #include <iostream>
+// #include <algorithm>
+// using namespace std;
+
+// int main(int argc, char const *argv[])
+// {
+//     int sum=0.0;
+//     float m[100][3];
+//     fill_n(&m[0][0], 100 * 3, 1);
+
+//     // float *p=&m[0][0];
+//     for (int i = 0; i < 300; ++i) {
+//         // cout<<*(p+i)<<" ";
+//         sum += *(m+i);
+//     }
+//     cout<<sum;
+
+//     return 0;
+// }
+
+// __________________________________________________________
+// #include <iostream>
+// using namespace std;
+// int main(int argc, char const *argv[])
+// {
+//     char *s;
+//     s = "Hello";
+//     s+=3;
+//     cout<<s;
+//     return 0;
+// }
+
+// __________________________________________________________
+
+// #include <iostream>
+// using namespace std;
+
+// inline int vd(int x,int y){
+//     static int a =10;
+//     return (x>a || y)? x-a+y++ : x+y;
+// }
+
+// int main(int argc, char const *argv[])
+// {
+//     // int m=5,n=8;
+//     // cout << vd(m,n);
+//     long** arr = new long*[10];
+//     // long crr = new long[10];
+//     return 0;
+// }
+// __________________________________________________________
+
 #include <iostream>
+// #include <assert.h>
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    int M[3][3] = {1,2,3,4};
-    // print M
-    for(int i=0; i<3; i++){
-        for(int j=0; j<3; j++){
-            cout << M[i][j] << " ";
-        }
-        cout << endl;
-    }
+    int x=5,y=10,*p,*q;
+    p=q=&x;
+    // p=(q=&x);
+    *q=6;
+    cout<< *p;
+    // assert(x>10);
     return 0;
 }
