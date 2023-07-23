@@ -152,17 +152,60 @@
 // }
 // __________________________________________________________
 
+// #include <iostream>
+// // #include <assert.h>
+// using namespace std;
+
+// int main(int argc, char const *argv[])
+// {
+//     int x=5,y=10,*p,*q;
+//     p=q=&x;
+//     // p=(q=&x);
+//     *q=6;
+//     cout<< *p;
+//     // assert(x>10);
+//     return 0;
+// }
+// __________________________________________________________
+
+// #include <iostream>
+// using namespace std;
+// struct state{
+//     int n, k;
+//     char A, B, C;
+//     state(int _n, char _A, char _B, char _C, int _k):
+//         n(_n), A(_A), B(_B), C(_C), k(_k) {}
+// };
+// int main(int argc, char const *argv[])
+// {
+//     /* code */
+//     state A = state(1,'a','b','c',3);
+//     return 0;
+// }
+
+// __________________________________________________________
+
 #include <iostream>
-// #include <assert.h>
+
 using namespace std;
 
-int main(int argc, char const *argv[])
+class Student {
+public:
+    string name;
+    int age;
+    Student(string name, int age){
+        this->name = name;
+        this->age = age;
+    }
+};
+
+int main()
 {
-    int x=5,y=10,*p,*q;
-    p=q=&x;
-    // p=(q=&x);
-    *q=6;
-    cout<< *p;
-    // assert(x>10);
+    Student objK = Student("Kien", 19);
+    Student* objH = new Student("Hoang", 19);
+    Student objN("Nam", 19);//Cach khac tao doi tuong
+    objK.age = 20;
+    objH->age = 20;
+    objN.age = 21;
     return 0;
 }
